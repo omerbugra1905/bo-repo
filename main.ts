@@ -52,7 +52,8 @@ async function tekSembol(symbol: string): Promise<string> {
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error(`  ${symbol}: HATA — ${msg}`);
-    return `${symbol}: hata`;
+    // Hata metnini cevaba da koy: /scan ile dashboard'a bakmadan teshis edilebilsin
+    return `${symbol}: HATA — ${msg}`;
   }
 }
 
