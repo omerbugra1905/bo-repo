@@ -7,7 +7,7 @@
 import { CONFIG, INTERVAL, SYMBOLS } from "./config.ts";
 import { fetchCandles } from "./fetcher.ts";
 import { detect } from "./detector.ts";
-import { cooldownKalan, cooldownYaz } from "./state.ts";
+import { cooldownKalan, cooldownYaz, depoDurumu } from "./state.ts";
 import { formatSignal, sendTelegram } from "./telegram.ts";
 import { isSkip } from "./types.ts";
 
@@ -98,6 +98,7 @@ Deno.serve(async (req) => {
       interval: INTERVAL,
       blacklistHoursUtc: CONFIG.SESSION_BLACKLIST_HOURS,
       cooldownHours: CONFIG.COOLDOWN_HOURS,
+      cooldownDepo: depoDurumu(),
       sonTarama,
       now: new Date().toISOString(),
     });
