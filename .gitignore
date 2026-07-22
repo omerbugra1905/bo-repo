@@ -1,0 +1,6 @@
+.env
+.env.local
+deno.lock
+*.log
+.DS_Store
+ts_sinyaller.json
